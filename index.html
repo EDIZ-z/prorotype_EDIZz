@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDIZz - Educate With GenZ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="logo-container">
+            <h2 class="logo-text">EDIZz</h2>
+            <span class="logo-subtext">EDUCATE WITH GENZ</span>
+        </div>
+        <div class="nav-links">
+            <a href="#" class="nav-link" id="btn-join">Join</a>
+            <button class="btn-login" id="btn-login-top">Log in</button>
+        </div>
+    </header>
+
+    <div id="app-container">
+        <main class="container scrollable-area" id="main-content">
+
+            <section class="hero-section">
+                <h1 class="hero-title">EDIZz</h1>
+                <p class="hero-subtitle">EDUCATE WITH GENZ</p>
+                <p class="hero-description">
+                    A smart skill-sharing platform where students discover mentors, pay securely, and<br>
+                    learn faster with AI roadmap + voice guidance.
+                </p>
+                <button class="btn-primary large-btn">Start Learning</button>
+            </section>
+
+            <section class="main-grid">
+
+                <div class="card form-card">
+                    <h3>Step 1: Student / Teacher Registration</h3>
+                    <p class="form-instruction">Enter your basic details. Mobile number will be used as your login
+                        username.</p>
+
+                    <div class="role-toggle">
+                        <button type="button" id="btn-student" class="toggle-btn">I am Student</button>
+                        <button type="button" id="btn-teacher" class="toggle-btn active">I am Teacher</button>
+                    </div>
+
+                    <form id="reg-form" action="#">
+                        <div class="input-group">
+                            <label>NAME</label>
+                            <input type="text" placeholder="Your full name" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label>MOBILE NUMBER</label>
+                            <input type="tel" placeholder="Mobile number" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label>EMAIL ADDRESS</label>
+                            <input type="email" placeholder="Email address" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label>CITY</label>
+                            <select>
+                                <option>Pune</option>
+                                <option>Mumbai</option>
+                                <option>Delhi</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group">
+                            <label>PASSWORD</label>
+                            <input type="password" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label>CONFIRM PASSWORD</label>
+                            <input type="password" required>
+                        </div>
+
+                        <div id="video-box" class="video-verification-box">
+                            <h4>Step 2: Teacher Live Verification Video (30 sec)</h4>
+                            <p>Record a short live skill demonstration and upload it to earn a "Verified" badge.</p>
+                            <div class="video-controls">
+                                <button type="button" class="btn-outline">Choose File</button>
+                                <span>No file chosen</span>
+                            </div>
+                            <div class="record-controls">
+                                <button type="button" class="btn-outline">Start 30s Recording</button>
+                                <button type="button" class="btn-outline">Stop</button>
+                            </div>
+                            <div class="video-player-placeholder">
+                                <div class="player-bar"></div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn-primary full-width">Create Account</button>
+                    </form>
+
+                    <p class="login-redirect">Already registered? <a href="#" id="link-login-bottom">Login here</a></p>
+                </div>
+
+                <div class="card info-card">
+                    <h3>How EDIZz Works</h3>
+
+                    <div class="step-box">
+                        <strong>Step 1: Onboarding</strong>
+                        <p>Choose Student or Teacher and complete basic details.</p>
+                    </div>
+
+                    <div class="step-box">
+                        <strong>Step 2: Verification</strong>
+                        <p>Teachers submit a live 30-second verification video demonstrating their skill.</p>
+                    </div>
+
+                    <div class="step-box">
+                        <strong>Step 3: Profile Setup</strong>
+                        <p>Teacher adds field of teaching, experience, and description for students.</p>
+                    </div>
+
+                    <div class="step-box">
+                        <strong>Secure Connect</strong>
+                        <p>Student uses teacher cards, pays to unlock chat via Escrow, then starts learning.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="features-section">
+                <h3 class="features-title">Why Choose EDIZz?</h3>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h4>🎙️ Smart Voice Matchmaking</h4>
+                        <p>Users speak their goals. Our AI extracts the exact skill, timeframe, and intent to find the
+                            perfect local match.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>🔒 Escrow Payment Security</h4>
+                        <p>Learners pay upfront, but funds are only released to the educator after the first lesson is
+                            completed.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h4>✅ Quality Verification</h4>
+                        <p>Tutors must upload a 30-second skill demonstration to earn a "Verified" badge, guaranteeing
+                            quality and safety.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="info-split-section">
+                <div class="split-card">
+                    <h3>🌍 The Impact</h3>
+                    <p>EDIZz is bridging the trust and friction gap in local skill-sharing. It empowers GenZ to become
+                        self-employed and builds stronger local community bonds.</p>
+                </div>
+                <div class="split-card">
+                    <h3>🛡️ Privacy First</h3>
+                    <p>We use radius-based location matching instead of exact pins to ensure user privacy. In-app
+                        reviews and progression badges keep the ecosystem trusted and secure.</p>
+                </div>
+            </section>
+
+            <section class="tech-section">
+                <h3 class="features-title">Technical Backbone</h3>
+                <div class="tech-grid">
+                    <div class="tech-item"><strong>Frontend:</strong> Mobile-responsive Web App for frictionless,
+                        cross-platform access.</div>
+                    <div class="tech-item"><strong>Backend API:</strong> Python (FastAPI) for high-speed, asynchronous
+                        API routing.</div>
+                    <div class="tech-item"><strong>Voice AI:</strong> Deepgram API for fast Speech-to-Text, and
+                        Gemini/OpenAI for intent extraction.</div>
+                    <div class="tech-item"><strong>Matching Engine:</strong> Pandas DataFrames utilized for instant,
+                        vectorized in-memory matching with zero-latency geographic filtering.</div>
+                </div>
+            </section>
+
+        </main>
+
+        <main class="container scrollable-area" id="success-page"
+            style="display: none; text-align: center; padding-top: 10vh;">
+            <h1 class="hero-title" style="font-size: 80px;">Welcome to EDIZz!</h1>
+            <p class="hero-description">Your account has been created successfully. Redirecting to your dashboard...</p>
+            <button class="btn-primary" onclick="location.reload()" style="font-size: 28px; padding: 25px 60px;">Go
+                Back</button>
+        </main>
+    </div>
+
+    <script>
+        // Form Elements
+        const btnStudent = document.getElementById('btn-student');
+        const btnTeacher = document.getElementById('btn-teacher');
+        const videoBox = document.getElementById('video-box');
+        const regForm = document.getElementById('reg-form');
+        const mainContent = document.getElementById('main-content');
+        const successPage = document.getElementById('success-page');
+
+        // Nav Elements (Interactivity)
+        const btnJoin = document.getElementById('btn-join');
+        const btnLoginTop = document.getElementById('btn-login-top');
+        const linkLoginBottom = document.getElementById('link-login-bottom');
+
+        // Toggle to Student
+        btnStudent.addEventListener('click', () => {
+            btnStudent.classList.add('active');
+            btnTeacher.classList.remove('active');
+            videoBox.style.display = 'none';
+        });
+
+        // Toggle to Teacher
+        btnTeacher.addEventListener('click', () => {
+            btnTeacher.classList.add('active');
+            btnStudent.classList.remove('active');
+            videoBox.style.display = 'block';
+        });
+
+        // Form Submit Simulation
+        regForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            mainContent.style.display = 'none';
+            successPage.style.display = 'block';
+        });
+
+        // Nav Interactivity
+        btnJoin.addEventListener('click', (e) => {
+            e.preventDefault();
+            alert("Join clicked! Scrolling to registration...");
+            document.querySelector('.main-grid').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        const triggerLogin = (e) => {
+            e.preventDefault();
+            alert("Opening Login Modal...");
+        };
+
+        btnLoginTop.addEventListener('click', triggerLogin);
+        linkLoginBottom.addEventListener('click', triggerLogin);
+    </script>
+</body>
+
+</html>
