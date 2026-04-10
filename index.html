@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EDIZz - Educate With GenZ</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <header class="navbar">
         <div class="nav-content">
-            <div class="logo-container">
+            <div class="logo-container" id="logo-home" style="cursor: pointer;">
                 <h2 class="logo-text">EDIZz</h2>
                 <span class="logo-subtext">EDUCATE WITH GENZ</span>
             </div>
@@ -22,8 +24,9 @@
     </header>
 
     <div id="app-container">
-        <main class="container scrollable-area" id="main-content">
-            
+
+        <main class="container scrollable-area view-active" id="view-landing">
+
             <section class="hero-section">
                 <div class="hero-content">
                     <h1 class="hero-title">EDIZz</h1>
@@ -32,16 +35,69 @@
                         A smart skill-sharing platform where students discover mentors, pay securely, and
                         learn faster with AI roadmap + voice guidance.
                     </p>
-                    <button class="btn-primary large-btn">Start Learning</button>
+                    <button class="btn-primary large-btn" id="btn-start-learning">Start Learning</button>
                 </div>
             </section>
 
+            <section class="features-section">
+                <h3 class="section-title">Why Choose EDIZz?</h3>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-emoji">🎙️</div>
+                        <h4>Smart Voice Matchmaking</h4>
+                        <p>Users speak their goals. Our AI extracts the exact skill, timeframe, and intent to find the
+                            perfect local match.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-emoji">🔒</div>
+                        <h4>Escrow Payment Security</h4>
+                        <p>Learners pay upfront, but funds are only released to the educator after the first lesson is
+                            completed.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-emoji">✅</div>
+                        <h4>Quality Verification</h4>
+                        <p>Tutors must upload a 30-second skill demonstration to earn a "Verified" badge, guaranteeing
+                            quality and safety.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="info-split-section">
+                <div class="split-card impact-card">
+                    <h3>🌍 The Impact & Privacy</h3>
+                    <p>EDIZz bridges the trust and friction gap in local skill-sharing. It empowers GenZ to become
+                        self-employed while building stronger local community bonds.</p>
+                    <p><strong>Privacy First:</strong> We use radius-based location matching instead of exact pins.
+                        In-app reviews and progression badges keep the ecosystem trusted and strictly on-platform.</p>
+                </div>
+
+                <div class="split-card tech-card">
+                    <h3>⚙️ Technical Backbone</h3>
+                    <ul class="tech-list">
+                        <li><strong>Frontend:</strong> Mobile-responsive Web App for frictionless access.</li>
+                        <li><strong>Backend API:</strong> Python (FastAPI) for high-speed API routing.</li>
+                        <li><strong>Voice AI:</strong> Deepgram API (Speech-to-Text) + Gemini/OpenAI (Intent).</li>
+                        <li><strong>Matching Engine:</strong> Pandas DataFrames for instant, zero-latency geographic
+                            in-memory filtering.</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <main class="container scrollable-area view-hidden" id="view-auth">
+            <div class="auth-header" style="text-align: center; margin-bottom: 30px;">
+                <h2 style="font-size: 32px; color: #fff;">Join the Community</h2>
+                <p style="color: var(--text-muted);">Sign up or log in to continue learning.</p>
+            </div>
+
             <section class="main-grid">
-                
+
                 <div class="card form-card">
-                    <h3>Step 1: Student / Teacher Registration</h3>
-                    <p class="form-instruction">Enter your basic details. Mobile number will be used as your login username.</p>
-                    
+                    <h3>Student / Teacher Registration</h3>
+                    <p class="form-instruction">Enter your basic details. Mobile number will be used as your login
+                        username.</p>
+
                     <div class="role-toggle">
                         <button type="button" id="btn-student" class="toggle-btn">I am Student</button>
                         <button type="button" id="btn-teacher" class="toggle-btn active">I am Teacher</button>
@@ -53,7 +109,7 @@
                                 <label>NAME</label>
                                 <input type="text" placeholder="Your full name" required>
                             </div>
-                            
+
                             <div class="input-group">
                                 <label>MOBILE NUMBER</label>
                                 <input type="tel" placeholder="Mobile number" required>
@@ -90,7 +146,7 @@
                         </div>
 
                         <div id="video-box" class="video-verification-box">
-                            <h4>Step 2: Teacher Live Verification Video (30 sec)</h4>
+                            <h4>Teacher Live Verification Video (30 sec)</h4>
                             <p>Record a short live skill demonstration and upload it to earn a "Verified" badge.</p>
                             <div class="video-controls">
                                 <button type="button" class="btn-outline">Choose File</button>
@@ -105,10 +161,10 @@
                             </div>
                         </div>
 
-                        <button type="submit" class="btn-primary full-width">Create Account</button>
+                        <button type="submit" class="btn-primary full-width">Create Account / Log In</button>
                     </form>
-                    
-                    <p class="login-redirect">Already registered? <a href="#" id="link-login-bottom">Login here</a></p>
+
+                    <p class="login-redirect">Trouble logging in? <a href="#">Contact Support</a></p>
                 </div>
 
                 <div class="card info-card">
@@ -148,69 +204,87 @@
                     </div>
                 </div>
             </section>
-
-            <section class="features-section">
-                <h3 class="section-title">Why Choose EDIZz?</h3>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-emoji">🎙️</div>
-                        <h4>Smart Voice Matchmaking</h4>
-                        <p>Users speak their goals. Our AI extracts the exact skill, timeframe, and intent to find the perfect local match.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-emoji">🔒</div>
-                        <h4>Escrow Payment Security</h4>
-                        <p>Learners pay upfront, but funds are only released to the educator after the first lesson is completed.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-emoji">✅</div>
-                        <h4>Quality Verification</h4>
-                        <p>Tutors must upload a 30-second skill demonstration to earn a "Verified" badge, guaranteeing quality and safety.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="info-split-section">
-                <div class="split-card impact-card">
-                    <h3>🌍 The Impact & Privacy</h3>
-                    <p>EDIZz bridges the trust and friction gap in local skill-sharing. It empowers GenZ to become self-employed while building stronger local community bonds.</p>
-                    <p><strong>Privacy First:</strong> We use radius-based location matching instead of exact pins. In-app reviews and progression badges keep the ecosystem trusted and strictly on-platform.</p>
-                </div>
-                
-                <div class="split-card tech-card">
-                    <h3>⚙️ Technical Backbone</h3>
-                    <ul class="tech-list">
-                        <li><strong>Frontend:</strong> Mobile-responsive Web App for frictionless access.</li>
-                        <li><strong>Backend API:</strong> Python (FastAPI) for high-speed API routing.</li>
-                        <li><strong>Voice AI:</strong> Deepgram API (Speech-to-Text) + Gemini/OpenAI (Intent).</li>
-                        <li><strong>Matching Engine:</strong> Pandas DataFrames for instant, zero-latency geographic in-memory filtering.</li>
-                    </ul>
-                </div>
-            </section>
-
         </main>
 
-        <main class="container scrollable-area" id="success-page" style="display: none; align-items: center; justify-content: center; text-align: center; height: 100%;">
-            <div>
-                <h1 class="hero-title">Welcome to EDIZz!</h1>
-                <p class="hero-description" style="margin-bottom: 30px;">Your account has been created successfully. Redirecting to your dashboard...</p>
-                <button class="btn-primary" onclick="location.reload()">Return Home</button>
+        <main class="container scrollable-area view-hidden" id="view-dashboard">
+            <div class="dashboard-wrapper">
+                <div class="dashboard-card">
+                    <div class="success-icon">✅</div>
+                    <h1 class="hero-title">Welcome to your Dashboard!</h1>
+                    <p class="hero-description" style="margin-bottom: 30px;">Authentication successful. You are now
+                        securely logged into the EDIZz platform.</p>
+                    <div style="display: flex; gap: 20px; justify-content: center;">
+                        <button class="btn-primary" id="btn-explore">Find Mentors</button>
+                        <button class="btn-outline" id="btn-logout"
+                            style="border-color: var(--primary-green); color: var(--primary-green);">Log Out</button>
+                    </div>
+                </div>
             </div>
         </main>
     </div>
 
     <script>
+        // Views
+        const viewLanding = document.getElementById('view-landing');
+        const viewAuth = document.getElementById('view-auth');
+        const viewDashboard = document.getElementById('view-dashboard');
+
+        // Buttons
+        const logoHome = document.getElementById('logo-home');
+        const btnJoin = document.getElementById('btn-join');
+        const btnLoginTop = document.getElementById('btn-login-top');
+        const btnStartLearning = document.getElementById('btn-start-learning');
+        const btnLogout = document.getElementById('btn-logout');
+        const regForm = document.getElementById('reg-form');
+
+        // Form Toggles
         const btnStudent = document.getElementById('btn-student');
         const btnTeacher = document.getElementById('btn-teacher');
         const videoBox = document.getElementById('video-box');
-        const regForm = document.getElementById('reg-form');
-        const mainContent = document.getElementById('main-content');
-        const successPage = document.getElementById('success-page');
-        const btnJoin = document.getElementById('btn-join');
-        const btnLoginTop = document.getElementById('btn-login-top');
-        const linkLoginBottom = document.getElementById('link-login-bottom');
 
-        // Toggle Roles
+        // --- Navigation Logic ---
+        function showView(viewToShow) {
+            // Hide all views
+            viewLanding.classList.remove('view-active');
+            viewLanding.classList.add('view-hidden');
+
+            viewAuth.classList.remove('view-active');
+            viewAuth.classList.add('view-hidden');
+
+            viewDashboard.classList.remove('view-active');
+            viewDashboard.classList.add('view-hidden');
+
+            // Show selected view
+            viewToShow.classList.remove('view-hidden');
+            viewToShow.classList.add('view-active');
+        }
+
+        // Trigger Auth View
+        const triggerAuth = (e) => {
+            e.preventDefault();
+            showView(viewAuth);
+            // Scroll to top of app container just in case
+            document.getElementById('app-container').scrollTo(0, 0);
+        };
+
+        btnJoin.addEventListener('click', triggerAuth);
+        btnLoginTop.addEventListener('click', triggerAuth);
+        btnStartLearning.addEventListener('click', triggerAuth);
+
+        // Trigger Landing View (Clicking Logo or Logging out)
+        logoHome.addEventListener('click', () => showView(viewLanding));
+        btnLogout.addEventListener('click', () => {
+            regForm.reset(); // Clear form on logout
+            showView(viewLanding);
+        });
+
+        // Form Submit -> Dashboard
+        regForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            showView(viewDashboard);
+        });
+
+        // --- Form Interaction Logic ---
         btnStudent.addEventListener('click', () => {
             btnStudent.classList.add('active');
             btnTeacher.classList.remove('active');
@@ -221,28 +295,9 @@
             btnTeacher.classList.add('active');
             btnStudent.classList.remove('active');
             videoBox.style.display = 'block';
+            videoBox.style.animation = "fadeInUp 0.3s ease";
         });
-
-        // Form Submit
-        regForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            mainContent.style.display = 'none';
-            successPage.style.display = 'flex'; // Use flex for centering
-        });
-
-        // Navigation Mocks
-        btnJoin.addEventListener('click', (e) => {
-            e.preventDefault();
-            document.querySelector('.main-grid').scrollIntoView({ behavior: 'smooth' });
-        });
-
-        const triggerLogin = (e) => {
-            e.preventDefault();
-            alert("Opening Login Dashboard...");
-        };
-
-        btnLoginTop.addEventListener('click', triggerLogin);
-        linkLoginBottom.addEventListener('click', triggerLogin);
     </script>
 </body>
+
 </html>
